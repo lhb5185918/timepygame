@@ -1,0 +1,291 @@
+{
+        "defaults":
+        {
+            "colours":
+            {
+                "normal_bg": "#3B88C3",
+                "hovered_bg": "#5C9BD1",
+                "disabled_bg": "#25567B",
+                "selected_bg": "#25567B",
+                "active_bg": "#193754",
+                "normal_text": "#FFFFFF",
+                "hovered_text": "#FFFFFF",
+                "selected_text": "#FFFFFF",
+                "disabled_text": "#6d736f",
+                "active_text": "#FFFFFF",
+                "normal_border": "#FFFFFF",
+                "hovered_border": "#FFFFFF",
+                "disabled_border": "#FFFFFF",
+                "selected_border": "#FFFFFF",
+                "active_border": "#FFFFFF"
+            },
+            "font":
+            {
+                "name": "simhei",
+                "size": "24",
+                "bold": "0",
+                "italic": "0"
+                ,"regular_path": "data/fonts/simhei.ttf"
+            }
+        },
+        "@title_labels":
+        {
+            "colours":
+            {
+                "normal_text": "#FFFFFF",
+                "dark_bg": "#00000000"
+            },
+            "font":
+            {
+                "name": "simhei",
+                "size": "42",
+                "bold": "1",
+                "italic": "0"
+                ,"regular_path": "data/fonts/simhei.ttf"
+            }
+        },
+        "@buttons":
+        {
+            "misc":
+            {
+                "shape": "rounded_rectangle",
+                "shape_corner_radius": "10",
+                "border_width": "2"
+            },
+            "font":
+            {
+                "name": "simhei",
+                "size": "24",
+                "bold": "1",
+                "italic": "0"
+                ,"regular_path": "data/fonts/simhei.ttf"
+            }
+        },
+        "@transparent_buttons":
+        {
+            "colours":
+            {
+                "normal_bg": "#00000000",
+                "hovered_bg": "#FFFFFF33",
+                "disabled_bg": "#00000000",
+                "selected_bg": "#FFFFFF44",
+                "active_bg": "#FFFFFF22",
+                "normal_text": "#FFFFFF00",
+                "hovered_text": "#FFFFFF",
+                "selected_text": "#FFFFFF",
+                "disabled_text": "#6d736f",
+                "active_text": "#FFFFFF",
+                "normal_border": "#FFFFFF00",
+                "hovered_border": "#FFFFFF77",
+                "disabled_border": "#FFFFFF00",
+                "selected_border": "#FFFFFFAA",
+                "active_border": "#FFFFFF88"
+            },
+            "misc":
+            {
+                "shape": "rounded_rectangle",
+                "shape_corner_radius": "10",
+                "border_width": "1",
+                "shadow_width": "0"
+            },
+            "font":
+            {
+                "name": "simhei",
+                "size": "24",
+                "bold": "0",
+                "italic": "0"
+                ,"regular_path": "data/fonts/simhei.ttf"
+            }
+        },
+        "#item_button":
+        {
+            "colours":
+            {
+                "normal_bg": "#555577",
+                "hovered_bg": "#7777AA",
+                "disabled_bg": "#25567B",
+                "selected_bg": "#25567B",
+                "active_bg": "#193754",
+                "normal_text": "#FFFFFF",
+                "hovered_text": "#FFFFFF",
+                "selected_text": "#FFFFFF",
+                "disabled_text": "#6d736f",
+                "active_text": "#FFFFFF",
+                "normal_border": "#AAAAFF",
+                "hovered_border": "#FFFFFF",
+                "disabled_border": "#FFFFFF",
+                "selected_border": "#FFFFFF",
+                "active_border": "#FFFFFF"
+            },
+            "misc":
+            {
+                "shape": "rounded_rectangle",
+                "shape_corner_radius": "5",
+                "border_width": "1",
+                "shadow_width": "1"
+            },
+            "font":
+            {
+                "name": "simhei",
+                "size": "20",
+                "bold": "1",
+                "italic": "0"
+                ,"regular_path": "data/fonts/simhei.ttf"
+            }
+        },
+        "#clock_label":
+        {
+            "colours":
+            {
+                "normal_text": "#FFCC00",
+                "dark_bg": "#00000000"
+            },
+            "font":
+            {
+                "name": "simhei",
+                "size": "26",
+                "bold": "1",
+                "italic": "0"
+                ,"regular_path": "data/fonts/simhei.ttf"
+            }
+        },
+        "#explore_button":
+        {
+            "colours":
+            {
+                "normal_bg": "#008800",
+                "hovered_bg": "#00AA00",
+                "disabled_bg": "#25567B",
+                "selected_bg": "#25567B",
+                "active_bg": "#006600",
+                "normal_text": "#FFFFFF",
+                "hovered_text": "#FFFFFF",
+                "selected_text": "#FFFFFF",
+                "disabled_text": "#6d736f",
+                "active_text": "#FFFFFF",
+                "normal_border": "#00FF00",
+                "hovered_border": "#FFFFFF",
+                "disabled_border": "#FFFFFF",
+                "selected_border": "#FFFFFF",
+                "active_border": "#FFFFFF"
+            },
+            "misc":
+            {
+                "shape": "rounded_rectangle",
+                "shape_corner_radius": "5",
+                "border_width": "1",
+                "shadow_width": "1"
+            },
+            "font":
+            {
+                "name": "simhei",
+                "size": "18",
+                "bold": "1",
+                "italic": "0"
+                ,"regular_path": "data/fonts/simhei.ttf"
+            }
+        },
+        "#text_entry_line":
+        {
+            "colours":
+            {
+                "dark_bg": "#222222",
+                "normal_text": "#BBBBBB"
+            },
+            "font":
+            {
+                "name": "simhei",
+                "size": "20",
+                "bold": "0",
+                "italic": "0"
+                ,"regular_path": "data/fonts/simhei.ttf"
+            }
+        },
+        "#start_button":
+        {
+            "colours":
+            {
+                "normal_bg": "#0066CC",
+                "hovered_bg": "#FFCC00",
+                "disabled_bg": "#25567B",
+                "selected_bg": "#25567B",
+                "active_bg": "#193754"
+            },
+            "font":
+            {
+                "name": "simhei",
+                "size": "24",
+                "bold": "1",
+                "italic": "0"
+                ,"regular_path": "data/fonts/simhei.ttf"
+            }
+        },
+        "#exit_button":
+        {
+            "colours":
+            {
+                "normal_bg": "#CC0000",
+                "hovered_bg": "#FFCC00",
+                "disabled_bg": "#25567B",
+                "selected_bg": "#25567B",
+                "active_bg": "#193754"
+            },
+            "font":
+            {
+                "name": "simhei",
+                "size": "24",
+                "bold": "1",
+                "italic": "0"
+                ,"regular_path": "data/fonts/simhei.ttf"
+            }
+        },
+        "#confirm_button":
+        {
+            "colours":
+            {
+                "normal_bg": "#33CC33",
+                "hovered_bg": "#FFCC00",
+                "disabled_bg": "#25567B",
+                "selected_bg": "#25567B",
+                "active_bg": "#193754"
+            },
+            "font":
+            {
+                "name": "simhei",
+                "size": "24",
+                "bold": "1",
+                "italic": "0"
+                ,"regular_path": "data/fonts/simhei.ttf"
+            }
+        },
+        "#back_button":
+        {
+            "colours":
+            {
+                "normal_bg": "#CC6600",
+                "hovered_bg": "#FFCC00",
+                "disabled_bg": "#25567B",
+                "selected_bg": "#25567B",
+                "active_bg": "#193754"
+            },
+            "font":
+            {
+                "name": "simhei",
+                "size": "24",
+                "bold": "1",
+                "italic": "0"
+                ,"regular_path": "data/fonts/simhei.ttf"
+            }
+        },
+        "#computer_title":
+        {
+            "font":
+            {
+                "name": "simhei",
+                "size": "32",
+                "bold": "1",
+                "italic": "0"
+                ,"regular_path": "data/fonts/simhei.ttf"
+            }
+        }
+    }
