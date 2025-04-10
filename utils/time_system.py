@@ -63,49 +63,70 @@ class GameTimeSystem:
         self.minute = minute
     
     def advance_time(self, hours=0, minutes=0):
-        """
-        推进时间
-        :param hours: 增加的小时数
-        :param minutes: 增加的分钟数
-        :return: 无
-        """
-        # 处理分钟增加
-        self.minute += minutes
-        self.hour += self.minute // 60
-        self.minute %= 60
+        """增加游戏时间"""
+        total_minutes = self.minute + minutes
+        additional_hours = total_minutes // 60
+        self.minute = total_minutes % 60
         
-        # 处理小时增加
-        self.hour += hours
-        self.day += self.hour // 24
-        self.hour %= 24
+        total_hours = self.hour + hours + additional_hours
+        additional_days = int(total_hours // 24)
+        self.hour = total_hours % 24
         
-        # 处理日期溢出
-        while self.day > self.get_days_in_current_month():
-            self.day -= self.get_days_in_current_month()
+        if additional_days > 0:
+            self.advance_days(additional_days)
+    
+    def advance_days(self, days):
+        """增加天数"""
+        self.day += days
+        while self.day > self.get_days_in_month():
+            self.day -= self.get_days_in_month()
             self.month += 1
             if self.month > 12:
                 self.month = 1
                 self.year += 1
     
-    def get_days_in_current_month(self):
-        """获取当前月份的天数"""
-        return self.DAYS_IN_MONTH[self.month]
+    def get_days_in_month(self):
+        """获取当月天数"""
+        if self.month in [4, 6, 9, 11]:
+            return 30
+        elif self.month == 2:
+            if self.is_leap_year():
+                return 29
+            return 28
+        else:
+            return 31
+    
+    def is_leap_year(self):
+        """判断是否为闰年"""
+        return (self.year % 4 == 0 and self.year % 100 != 0) or (self.year % 400 == 0)
     
     def get_current_season(self):
         """获取当前季节"""
-        return self.SEASONS[self.month]
+        if self.month in [3, 4, 5]:
+            return "春季"
+        elif self.month in [6, 7, 8]:
+            return "夏季"
+        elif self.month in [9, 10, 11]:
+            return "秋季"
+        else:
+            return "冬季"
     
     def get_current_month_name(self):
         """获取当前月份名称"""
-        return self.MONTH_NAMES[self.month]
+        month_names = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二"]
+        return f"{month_names[self.month - 1]}月"
+    
+    def get_formatted_time(self):
+        """获取格式化的时间字符串 HH:MM"""
+        return f"{int(self.hour):02d}:{int(self.minute):02d}"
+    
+    def get_formatted_full_display(self):
+        """获取完整的时间显示，包括季节和日期"""
+        return f"{self.get_current_season()} {self.get_current_month_name()}{int(self.day)}日 {self.get_formatted_time()}"
     
     def get_formatted_date(self):
         """获取格式化的日期字符串"""
         return f"{self.year}年{self.get_current_month_name()}{self.day}日"
-    
-    def get_formatted_time(self):
-        """获取格式化的时间字符串"""
-        return f"{self.hour:02d}:{self.minute:02d}"
     
     def get_formatted_date_time(self):
         """获取完整格式化的日期时间字符串"""
@@ -132,16 +153,33 @@ class GameTimeSystem:
         }
     
     def get_light_condition(self):
-        """
-        获取当前的光照条件，用于确定背景图片
-        返回值:
-        - "night": 夜晚 (18:00-6:00)
-        - "day": 白天 (10:00-16:00)
-        - "twilight": 黎明/黄昏 (6:00-10:00 或 16:00-18:00)
-        """
-        if self.hour >= 18 or self.hour < 6:
-            return "night"
-        elif 10 <= self.hour < 16:
+        """根据当前时间返回光照条件"""
+        hour = int(self.hour)
+        if 6 <= hour < 18:  # 白天
             return "day"
-        else:
-            return "twilight" 
+        elif 18 <= hour < 20 or 4 <= hour < 6:  # 黎明/黄昏
+            return "twilight"
+        else:  # 夜晚
+            return "night"
+    
+    def get_total_days(self):
+        """获取从游戏开始(2000年1月1日)至今的总天数"""
+        # 计算年份贡献的天数
+        days = 0
+        for y in range(2000, self.year):
+            if (y % 4 == 0 and y % 100 != 0) or (y % 400 == 0):
+                days += 366  # 闰年
+            else:
+                days += 365  # 平年
+                
+        # 计算当年月份贡献的天数
+        for m in range(1, self.month):
+            days += self.DAYS_IN_MONTH[m]
+            # 如果是闰年且已经过了2月
+            if m == 2 and self.is_leap_year():
+                days += 1
+                
+        # 加上当月的天数
+        days += self.day
+        
+        return days 
